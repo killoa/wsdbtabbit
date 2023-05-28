@@ -1,0 +1,384 @@
+%equations, bib. \\
+
+
+\section{Introduction}
+In this Chapter, the focus will be on Tabbit development. It is important to note that the version being defended is not the final product, but rather a Minimum Viable Product (MVP). Despite this, the basic features have been developed and are stable, functioning as intended. Throughout this thesis, we will discuss the various technologies implemented in Tabbit, offering a comprehensive overview of the current state of the project, while also highlighting areas where improvements can still be made.
+
+\textbf{Sprint Planning:}
+
+In our Scrum approach to the Tabbit app development, we have divided our work into three major sprints:
+
+\textbf{Sprint 1: Authentication} 
+
+User Story 1: Implement User Registration
+
+User Story 2: Implement User Login 
+
+
+\textbf{Sprint 2: Map Integration and Ride Request}
+
+User Story 3: Display User Location on Map 
+
+User Story 4: Display Available Drivers on Map
+
+User Story 5: Request Ride (Story Points: 5)
+
+
+\textbf{Sprint 3: Static Screens}
+
+User Story 6: Edit User Profile 
+
+User Story 7: View Ride History 
+
+User Story 8: Customize App Settings 
+
+\section{Technologies Used To Build Tabbit}
+
+\subsection{UI/UX}
+Every successful project starts with a  Usable, Equitable, Enjoyable, and Useful prototype. Therefore choosing the right tool is crucial
+\subsubsection{Adobe XD}
+
+Adobe XD is a powerful tool used to create realistic prototypes. Adobe XD offers a vector-based experience design platform.
+adobe XD provides a range of time-saving features and workflows to help designers focus on production. creative professionals across the globe utilize Adobe XD to collaborate throughout the design process, from initial concepts to developer handover. it also enables users to share links to designs and specifications so that members of the team can review and comment directly in the browser.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.3\textwidth]{Figures/xd.png}
+  \caption[Adobe XD logo]{Adobe XD logo.}
+  \label{fig:xd}
+\end{figure}
+
+\subsection{Developement}
+As any Developer, We focus on choosing the right stack for every project. Having a solution to achieve first-class products with modern and high-quality technology is always the first milestone.
+
+\subsubsection{Flutter}
+Flutter is a software development kit created by Google for building beautiful, natively compiled, and high-performance applications for mobile, web, and desktop from a single codebase.
+The Google technology offers several benefits for the development of software products, some of which are cross-platform, better compatibility, expressive and flexible UI
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.3\textwidth]{Figures/flutter5786.jpg}
+  \caption[Flutter Logo]{Flutter Logo}
+  \label{fig:flutter}
+\end{figure}
+
+flutter architecture is simple yet really powerful it is further explained in Figure 2.1.2
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{Figures/flutterarch.png}
+  \caption[Flutter Architecture]{Flutter Architecture.}
+  \label{fig:flutter}
+\end{figure}
+
+\subsubsection{Firebase}
+Firebase is a great Backend-as-a-service (BaaS) that provides hosted backend services such as a real-time database, cloud storage, authentication, crash reporting, machine learning, remote configuration, and hosting for your static files.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.3\textwidth]{Figures/0firebase.png}
+  \caption[Firebase logo]{Firebase Logo}
+  \label{fig:firebase}
+\end{figure}
+ Flutter + Firebase is a great combination to start a project. Its multiple services are organized under the following categories: “Build”, “Release monitor “, “Analytics”, and “Engage”
+
+\subsection{CI/CD}
+Continuous Integration and Continuous Deployment make the updates part more efficient therefore the most convenient alternative with Firebase is 
+\subsubsection{Firebase App Distribution}
+Firebase App Distribution gives a holistic view of your beta testing program across iOS and Android. Firebase App Distribution offers a range of key features, it is cross-platform, fast distribution, tester management, and works with Android app bundles.
+\subsection{Infrastructure}
+\subsubsection{Google Cloud Platform}
+Google Cloud Platform (GCP) is Google’s public cloud offering comparable to Amazon Web Services and Microsoft Azure. The difference is that GCP is built upon Google's massive, cutting-edge infrastructure that handles the traffic and workload of all Google users.
+
+
+
+
+\subsection{Comparison of Mobile Development Platforms}
+
+Note that these are generalizations, and the actual performance and usability may vary depending on the specific project's requirements and the developer's experience with the platform. \\
+
+\begin{table}[ht!]
+\centering
+    \begin{tabular}{ m{3cm} m{2.5cm} m{3cm} m{2.5cm} m{2cm} } 
+    \toprule
+    \toprule
+    \textbf{Features} & \textbf{Flutter} & \textbf{React Native} & \textbf{Ionic} & \textbf{Xamarin} \\
+    \midrule
+    Programming Language    & Dart    & JavaScript   & TypeScript     & C \# \\[1.3ex]
+    Native Look and Feel     & Yes    & Partial   & Partial    & Yes  \\[1.3ex]
+    Performance      & Excellent     & Good   & Average     & Good \\[1.3ex]
+    Development Speed  & Fast     & Fast   & Fast     & Slow \\[1.3ex]
+    Community Support      & Good    & Excellent   & Average    & Average \\[1.3ex]
+    Code Reusability     & High      & High     & Medium      & Medium  \\[1.3ex]
+    Popularity     & Growing  & Popular   & Declining    & Stable \\[1.3ex]
+    \bottomrule
+    \bottomrule
+    \end{tabular}
+% the square brackets after \caption gives the table a proper title in the list of tables, instead of just inserting the beginning of the table caption
+\caption[Cross-Platform App Development Frameworks Comparison]{Table of Cross-Platform App Development Frameworks Comparison.}
+\label{table:frameworks}
+\end{table}
+\pagebreak
+\section{Modeling The Functional Requirements}
+Based on the functionalities described in the previous chapter, I detail the global use case diagram of the application which illustrates a general idea of how the system works with respect to its different actors using UML
+\subsection{General Use Case Diagram}
+I start by providing an overview of the different functionalities offered by the application with a global use case diagram while identifying the main actors and their functionalities as Figure 2.1.3 illustrates
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{Figures/diagglobtabbit.png}
+  \caption[Tabbit Functionality Use Case]{Tabbit Functionality Use Case}
+  \label{fig:usecase}
+\end{figure}
+\pagebreak
+\subsection{Sequence Diagram}
+
+The sequence diagrams are the graphical representation of the interactions between the actors and the system in chronological order in the UML formulation. In the following, a general dynamic view is illustrated in the figure 
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{Figures/sequence.png}
+  \caption[Tabbit Sequence Diagram]{Tabbit Sequence Diagram}
+  \label{fig:seq}
+\end{figure}
+\subsubsection{Authentication Sequence Diagram}
+As our application uses Firebase auth, it provides an OTP-based solution used in our application to maintain security for the application.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{Figures/seqauth.png}
+  \caption[Detailed Sequence Diagram for Authentication]{Detailed Sequence Diagram for Authentication}
+  \label{fig:seqaut}
+\end{figure}
+\textbf{Description:} 
+
+To limit the number of OTP SMS to the least since it is a paid service we opted to make two screens dedicated to OTP verification so that both users attempting to login and register only receive one SMS at a time. After verifying the system checks if the user number is already registered in the Firebase fires if found it means the user is already signed up and automatically login without providing any further information. Else, the user is asked to fill in all the information needed to create an account.
+\subsubsection{Ride Request Sequence Diagram}
+Requesting a ride represents its backbone. It is the most complicated process in the app since it uses multiple APIs endpoints and different actors are included.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{Figures/seqride.png}
+  \caption[Detailed Sequence Diagram for Taking a Ride process]{Detailed Sequence Diagram for Taking a Ride process}
+  \label{fig:seqride}
+\end{figure}
+\textbf{Description:} 
+
+Whenever a passenger attempts to request a ride he must first provide his destination in a search box, It triggers synchronized requests to Places API that will recommend destinations for the passenger. Once the passenger confirms his destination the app will the system will send a request to Google's Routes Preferred API containing: the driver's location (longitude and latitude), the passenger pick-up point coordination, and the destination. The API response contains distance, traffic likelihood, ride time estimation, and polyline representing the route to be taken. If the passenger accepts the ride proposal, nearby drivers will be notified. When the driver accepts the ride proposal the ride status will change and the ride information will be stored in Firestore. The ride will be tracked through GPS when the ride is complete both the driver and passenger will be asked to rate their experience.
+\pagebreak
+ \subsection{Class Diagram}
+
+The class diagram is a crucial part of the modeling, it gives a clearer view of the components of the final system. Even if it does not define the number and the status of individual instances. However, I often find that class diagram makes development structure efficient and clear. In the case of work carried out in groups, it is also possible to separate the components in such a way that enables the distribution of work. The next figure illustrates Tabbit class diagram
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{Figures/classdiag.png}
+  \caption[Tabbit Class Diagram]{Tabbit Class Diagram}
+  \label{fig:usecase}
+\end{figure}
+\pagebreak
+\section{Tabbit Architecture}
+While creating Tabbit we tried to ensure scalability, efficiency, and performance by following code best practices and design patterns for a clean and optimized code. The most popular design pattern for flutter is BloC
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{Figures/architectureexplained.png}
+  \caption[Tabbit Architecture Explained]{Tabbit Architecture Explained}
+  \label{fig:usecase}
+\end{figure}
+\subsection{BloC Pattern}
+BLoC is a popular design/architectural pattern used in software development to design and develop applications.
+
+Flutter brought a new design pattern upon its inception, a variation of this MVC called BLoC.
+
+BLoC uses the concept of Streams or Reactive programming. This means that when a stream of events is created, subscribers can listen in on the stream of events. The subscribers are notified of new data when emitted into the stream.
+\section{Creation Of The Database}
+ Our application is based on distributed systems and manages data hosted on servers that
+change in real-time, we need to store our data in real-time and access it just as quickly, and traditional relational databases cannot provide a satisfactory response time, which is why we opted to use NoSQL databases specifically Firebase Firestore. 
+ \subsection{NoSQL}
+ NoSQL databases are those databases that are non-relational, open-source, distributed in
+nature as well as have high performance in a linear way that is horizontally scalable. A
+non-relational database does not organize its data in related tables (i.e., data is stored in a nonnormalized way). NoSQL databases are open-source; therefore, everyone can look into its
+code freely, update it according to his needs, and compile it. Distributed means data is spread
+to different machines and is managed by different machines so here it uses the concept of data
+replication.
+
+ NoSQL databases are an excellent fit for many modern applications such as mobile, web, and
+gaming that require flexible, scalable, high-performance, and highly functional databases to
+provide great user experiences.
+\begin{itemize}
+    \item \textbf{Flexibility:} NoSQL databases generally provide flexible schemas that enable faster
+and more iterative development. The flexible data model makes NoSQL databases
+ideal for semi-structured and unstructured data.
+    \item \textbf{}
+\end{itemize}
+ \subsubsection{SQLite}
+SQLite is a C-language library that implements a small, fast, self-contained, high-reliability, full-featured, SQL database engine. SQLite is the most used database engine in the world. SQLite is built into all mobile phones and most computers and comes bundled with countless other applications that people use every day.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.3\textwidth]{Figures/SQLite.png}
+  \caption[SQLite logo]{SQLite Logo}
+  \label{fig:sqlite}
+\end{figure}
+
+\section{Sprint One: Authentication}
+In this section, we will explain how Tabbit's authentication works. Users with no stored data will always be asked to put their phone numbers to identify themselves for security measures they'll receive an OTP code in an SMS for verification as illustrated in the next two figures.
+
+\subsection{User Story 1: Implement User Registration }
+\subsubsection{Task 1: Setting up registration form}
+The first interaction of Tabbit users after splashscreen is a screen welcoming them and asking them to enter their phone number as Figure 2. illustrates
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.3\textwidth]{Figures/auth.png}
+  \caption[First Screen]{First Screen}
+  \label{fig:fsc}
+\end{figure}
+
+\subsubsection{Task 2: Implement backend API endpoint for user registration}
+\subsubsection{Task 3: Add validation and error handling for registration inputs}
+\subsection{User Story 2: Implement User Login }
+\subsubsection{Task 1: Create a login screen UI}
+\subsubsection{Task 2: Implement backend API endpoint for user login}
+\subsubsection{Task 3: Handle authentication tokens and session management}
+
+
+\begin{figure}[H]
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=.4\linewidth]{Figures/auth.png}
+  \caption[Authentication Screenshot]{Authentication Screen}
+  \label{fig:auth}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=.4\linewidth]{Figures/otp.png}
+  \caption[OTP Screenshot]{OTP Screen}
+  \label{fig:otp}
+\end{minipage}
+\end{figure}
+\pagebreak
+if the phone number does not exist in the database the user is moved to the sign-up screen. For a passenger to create an account the process can't be simpler. The passenger only needs to introduce some basic pieces of information such as full name, gender, and birthday. Drivers go with a longer manual process. as the next figure illustrates
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.3\textwidth]{Figures/signup.png}
+  \caption[Sign Up Screen]{Sign Up Screen}
+  \label{fig:usecase}
+\end{figure}
+
+This process is made possible using Firebase authentication service which handles OTP texting. the implementation to Flutter also was simple since Flutter works well with Firebase. the next two figures show the authentication results in the Firebase console and customization interface 
+
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.6\textwidth]{Figures/authe.png}
+  \caption[Authentication Firebase]{Authentication Firebase}
+  \label{fig:authe}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.6\textwidth]{Figures/otppp.png}
+  \caption[OTP Message Customization Firebase]{OTP Message Customization Firebase}
+  \label{fig:authe}
+\end{figure}
+
+\section{Sprint 2: Map Integration and Ride Request}
+\subsection{User Story 3: Display User Location on Map}
+\subsubsection{Task 1: Integrate Google Maps API for displaying the map}
+\subsubsection{Task 2: Fetch passenger location and display it on the map}
+\subsubsection{Task 3: Implement real-time location updates for the user}
+\subsection{User Story 4: Display Available Drivers on Map}
+\subsubsection{Task 1: Fetch driver data from the backend API}
+\subsubsection{Task 2: Display driver markers on the map}
+\subsubsection{Task 3: Implement driver selection functionality}
+\subsection{User Story 5: Request Ride}
+\subsubsection{Task 1: Design the ride request UI}
+\subsubsection{Task 2: Implement backend API endpoint for ride requests}
+\subsubsection{Task 3: Handle ride request confirmation and notifications}
+
+
+
+
+\subsection{Third Party APIs}
+Ordering the Rides was by far the hardest task in the project. To make it possible I included multiple third-party APIs such as:
+
+
+\begin{itemize}
+  \item Maps API: offers users dynamics maps for web and mobile.
+  \item Routes API performance optimized version of the Directions API and Distance Matrix API, used to predict preferred routes and assume traffic, time, and distance.
+  \item Places API, used to facilitate searching locations for users. 
+  \item The Geolocation API returns a location and accuracy radius of a user
+\end{itemize}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.3\textwidth]{Figures/google-maps.png}
+  \caption[Google Maps Platform logo]{Google Maps Platform Logo }
+  \label{fig:mapslogo}
+\end{figure} 
+Note that all of those APIs are part of the google maps platform.
+\pagebreak
+\subsection{Main Screen}
+The main screen of the app contains a map in the center is the user's location with a yellow radius indicating the furthest point a driver can receive his request as further illustrated in Figure 2.5.2
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.4\textwidth]{Figures/1.png}
+  \caption[Main Screen Screenshot]{Main Screen Screenshot}
+  \label{fig:mainscreen}
+\end{figure}
+
+\subsection{Ride Request}
+
+After allocating the destination using Places API the app sends Preferred Route API a request for the trajectory polylines with the estimated time of the ride and its distance. The figure illustrates an example of a JSON request to the API. an example of a response is also illustrated in Figure
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.4\textwidth]{Figures/req.png}
+  \caption[Ride JSON Request Example]{Ride JSON Request Example}
+  \label{fig:jsonreq}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.4\textwidth]{Figures/result.png}
+  \caption[Ride JSON Response Example]{Ride JSON Response Example}
+  \label{fig:jsonres}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.4\textwidth]{Figures/riderequest.png}
+  \caption[Ride Request Screenshot]{Ride Request Screenshot}
+  \label{fig:ridereqss}
+\end{figure}
+\pagebreak
+\subsection{Rating}
+the driver and passenger are both asked to give a rating for the ride. Drivers and passengers with low average ratings are at risk of having their accounts banned. The next figure illustrates the rating screen screenshot
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.4\textwidth]{Figures/rating.png}
+  \caption[Rating Screen Screenshot]{Rating Screen Screenshot}
+  \label{fig:ratingss}
+\end{figure}
+\section{Sprint 3: Static Screens}
+\subsection{User Story 6: Edit User Profile }
+\subsection{User Story 7: View Ride History }
+\subsection{User Story 8: Customize App Settings}
+
+\subsection{Others}
+In the following, I present other different interfaces of the application that I have made. such as:
+\begin{itemize}
+  \item Menu Overall, the main menu interface provides users with quick and easy access to all the key features and functions of the app, making it simple to navigate and use.
+  \item Notification users can find update notices, coupons, and system notifications
+  \item Lastly, travel history for users to consult their old rides information.
+\end{itemize}
+
+\begin{figure}[htp]
+
+\centering
+\includegraphics[width=.3\textwidth]{Figures/menu.png}\hfill
+\includegraphics[width=.3\textwidth]{Figures/notif.png}\hfill
+\includegraphics[width=.3\textwidth]{Figures/history.png}
+
+\caption{Other Screens}
+\label{fig:figure3}
+
+\end{figure}
+
+\subsection{Disclaimer}
+As the UI for the driver functionality is still under development, I have utilized solely the passenger UI. It was deemed necessary to abstain from incorporating the driver UI in order to ensure a seamless user experience and avoid any potential inconsistencies or usability issues that could arise from using an unfinished feature.
+
