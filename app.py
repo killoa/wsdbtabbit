@@ -41,4 +41,4 @@ def get_dim_driver_rating_data():
     return jsonify(get_data_from_table('Dim_Driver_Rating'))
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False, port=5000)
